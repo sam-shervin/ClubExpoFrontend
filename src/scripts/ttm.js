@@ -5,7 +5,6 @@ document
 
         const prompt = document.getElementById("prompt").value;
         const duration = document.getElementById("duration").value;
-
         const response = await fetch("https://4b57-106-222-222-208.ngrok-free.app/generate", {
             method: "POST",
             headers: {
@@ -13,7 +12,6 @@ document
             },
             body: JSON.stringify({ prompt, duration }),
         });
-
         if (response.ok) {
             const audioBlob = await response.blob();
             const audioUrl = URL.createObjectURL(audioBlob);
